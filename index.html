@@ -8,6 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-c.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&callback=initMap" async defer></script>
 </head>
 <body>
   <div class = "body">
@@ -19,6 +20,7 @@
         <li><a href="#algorithme">Algorithmes</a></li>
         <li><a href="#concours">Le concours</a></li>
         <li><a href="#bilan">Bilan</a></li>
+        <li><a href="#contact">Contactes</a></li>
         <li><button id="colorButton">Mode Nuit</button></li>
       </ul>
     </nav>
@@ -480,6 +482,43 @@ Cela signifie que nous avons pu apporter une aide précieuse ou partager nos con
       <p>Ce projet a également renforcé notre goût pour le travail d'équipe et la cohésion au sein de notre groupe, ainsi qu'avec les autres membres des différentes équipes. Nous avons constaté à quel point nous nous entraidions mutuellement pour mener ce projet à bien. Pour illustrer cela, revenons au samedi soir où les choses allaient de mal en pis pour notre groupe. Notre robot ne répondait plus et nous avions perdu tout espoir après avoir épuisé toutes les options, y compris refaire les soudures. Nous avons finalement dû admettre qu'il était nécessaire de reconstruire le robot, mais nous manquions de temps et de matériel à Cachan.</p>
       <p>C'est pourquoi nous avons décidé de fusionner avec un autre groupe de Vélizy en abandonnant notre propre robot. Nous les avons aidés dans la programmation et surtout dans la validation des missions. Étant donné que notre groupe dormait sur place, nous avons pu travailler le soir et tôt le matin pour faire valider un plus grand nombre de missions, permettant ainsi à leur robot d'obtenir un meilleur classement et de participer pleinement à l'événement, malgré les problèmes de notre propre robot.</p>
       <p>Une autre leçon que nous avons tirée de ce projet robotique est qu'il ne faut jamais abandonner ni baisser les bras. De retour à l'IUT, nous avons refait de nouvelles cartes électroniques avec des soudures plus soignées, et notre robot a pu reprendre vie. Il a participé avec succès aux 24 heures de Vélizy en accomplissant toutes les missions imposées.</p>
+    </section>
+
+    <section id="contact" class="animated">
+      <h2>Contactes</h2>
+      <br>
+      <p id="centre">
+        <b>Mme Anita CHARRIER</b> <br>
+        Secrétariat du département GEII <br>
+        <b>anita.charrier@iut-velizy.uvsq.fr</b>
+      </p>
+    
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+
+      <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+      <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+
+      <script>
+          mapboxgl.accessToken = 'your-access-token'; // Remplacez par votre access token Mapbox
+
+          var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v11',
+              center: [2.2029, 48.7814], // Coordonnées de l'IUT de Vélizy (longitude, latitude)
+              zoom: 15
+          });
+
+          map.addControl(new mapboxgl.NavigationControl());
+
+          new mapboxgl.Marker().setLngLat([2.2029, 48.7814]).addTo(map)
+              .setPopup(new mapboxgl.Popup().setHTML("<b>IUT de Vélizy</b><br />2 Avenue de la Division Leclerc<br />78140 Vélizy-Villacoublay"))
+              .addTo(map);
+      </script>
+      <p id = "adresse">IUT de Vélizy<br>
+        2 Avenue de la Division Leclerc<br>
+        78140 Vélizy-Villacoublay</p>
     </section>
     
   </main>

@@ -113,3 +113,4 @@ window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
   topbar.classList.add("fixed-topbar");
 });
+
