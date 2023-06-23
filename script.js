@@ -1,15 +1,4 @@
-// script.js
-const header = document.querySelector("header");
-const topbar = document.querySelector("nav ul");
-
-window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  if (scrollPosition >= header.offsetHeight) {
-    topbar.classList.add("fixed-topbar");
-  } else {
-    topbar.classList.remove("fixed-topbar");
-  }
-});
+var inverted = false;
 
 // script.js
 const codeGroups = document.querySelectorAll(".code");
@@ -85,5 +74,42 @@ function startSlider() {
 // Démarrer le défilement automatique au chargement de la page
 startSlider();
 
+// Récupérer le bouton à partir de son ID
+var colorButton = document.getElementById('colorButton');
+
+// Définir l'événement onclick pour le bouton
+colorButton.onclick = function() {
+  // Inverser les couleurs du site
+  var body = document.body;
+  body.classList.toggle('invert-colors');
+  if (inverted == true) {
+    inverted = false;
+  }else {
+    inverted = true;
+  }
+  if (inverted) {
+    colorButton.innerText = "Mode Jour"
+  }else {
+    colorButton.innerText = "Mode Nuit"
+  }
+  
+};
 
 
+
+
+// script.js
+
+
+
+window.addEventListener("scroll", () => {
+  if (inverted) {
+    var header = document.querySelector('header.invert-colors');
+    var topbar = document.querySelector('nav.invert-colors ul');
+  }else {
+    var header = document.querySelector("header");
+    var topbar = document.querySelector("nav ul");
+  }
+  const scrollPosition = window.scrollY;
+  topbar.classList.add("fixed-topbar");
+});
