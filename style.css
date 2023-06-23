@@ -1,0 +1,255 @@
+/* style.css */
+body {
+  background-color: #f2f2f2;
+  color: #333;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: #f2f2f2;
+  color: #333;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #666;
+  border-radius: 2px;
+}
+
+.main {
+  padding: 40px;
+}
+
+.headPage {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.animated {
+  background-color: #fff;
+  padding: 50px;
+  max-width: 65%;
+  margin: 0 auto;
+  border-radius: 10px; /* Ajout de la propriété border-radius */
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  margin-bottom: 50px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  nav ul li a {
+    padding: 5px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+}
+
+nav ul.fixed-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 100;
+  padding: 20px;
+}
+
+
+/* style.css */
+.code {
+  position: relative;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 0 auto;
+  overflow: auto; /* ou overflow: scroll; */
+  max-width: 90%;
+  margin-top: 20px;
+}
+
+#allcode {
+  max-height: 500px;
+}
+
+.copy-code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.copy-code button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  justify-content: center; /* Centre les images horizontalement */
+  gap: 10px; /* Ajoute un espace de 10px entre les images */
+}
+
+.image-slider img {
+  display: inline-block;
+  width: auto;
+  height: 400px; /* Hauteur fixe désirée */
+  object-fit: cover; /* Ajuster l'image en conservant sa proportion */
+  filter: brightness(0.5); /* Baisser la luminosité de l'image */
+  opacity: 1;
+  transition: opacity 0.5s ease, filter 0.5s ease; /* Ajouter une transition pour l'opacité et le filtre */
+  flex: 0 0 auto;
+  width: auto;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px; /* Ajoute un arrondi de 10px aux coins des images */
+}
+
+.image-slider img.active {
+  filter: brightness(1); /* Éclaircir l'image lorsqu'elle est en cours de défilement */
+  opacity: 1;
+}
+
+/* Barre de défilement verticale */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+#colorButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+body.invert-colors img {
+  filter: invert(0);
+}
+.invert-colors {
+  filter: invert(1);
+}
+
+
+
+
